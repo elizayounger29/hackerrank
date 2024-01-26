@@ -6,7 +6,6 @@ import random
 import re
 import sys
 
-#
 # Complete the 'twoArrays' function below.
 #
 # The function is expected to return a STRING.
