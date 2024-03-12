@@ -13,19 +13,21 @@ import sys
 # The function accepts following parameters:
 #  1. STRING s
 #  2. INTEGER k
-#
 
 def caesarCipher(s, k):
+    k = k % 26
     split_string = []
     for item in s:
         split_string.append(item)
 
     ascii_string = [ord(x) for x in split_string]               # if 65 > ord(x) < 122
     for i in range(len(ascii_string)):
+
         if ascii_string[i] >= 65 and ascii_string[i] <= 90:     # if upper case
             ascii_string[i] += k
             if ascii_string[i] > 90:
                 ascii_string[i] = 64 + (ascii_string[i] - 90) % 26
+
         elif ascii_string[i] >= 97 and ascii_string[i] <= 122:  # if lower case
             ascii_string[i] += k
             if ascii_string[i] > 122:
@@ -37,9 +39,8 @@ def caesarCipher(s, k):
     return joined_string
 
 
-
 if __name__ == '__main__':
-    string = "What's up?"
-    k = 1
+    string = "Z"
+    k = 26
     result = caesarCipher(string, k)
     print(result)
